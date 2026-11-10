@@ -34,7 +34,9 @@ def view_expenses():
 
     for name, price in expenses:
         print(f"{name} ${price:.2f}")
-
+def count_expenses():
+    count = len(expenses)
+    print("Total number of expenses:" , count)
 
 def view_total():
     total = 0
@@ -52,7 +54,8 @@ while True:
     print("1. Add expense")
     print("2. View expenses")
     print("3. View total expenses")
-    print("4. Exit")
+    print("4. Count expenses")
+    print("5. Exit")
 
     choice = input("Choose an option: ")
 
@@ -63,6 +66,8 @@ while True:
     elif choice == "3":
         view_total()
     elif choice == "4":
+        count_expenses()
+    elif choice == "5":
         print("Goodbye!")
         break
     else:
