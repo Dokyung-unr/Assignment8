@@ -34,7 +34,9 @@ def view_expenses():
 
     for name, price in expenses:
         print(f"{name} ${price:.2f}")
-
+def count_expenses():
+    count = len(expenses)
+    print("Total number of expenses:" , count)
 
 def view_total():
     total = 0
@@ -59,13 +61,16 @@ def most_expensive():
 
 
 # Keep showing the menu until the user chooses Exit.
+
+# Keep showing the menu until the user chooses Exit.
 while True:
     print("\n--- Expense Tracker ---")
     print("1. Add expense")
     print("2. View expenses")
     print("3. View total expenses")
-    print("4. Most expensive expense")
-    print("5. Exit")
+    print("4. Count expenses")
+    print("5. Most expensive expense")
+    print("6. Exit")
 
     choice = input("Choose an option: ")
 
@@ -76,8 +81,10 @@ while True:
     elif choice == "3":
         view_total()
     elif choice == "4":
-        most_expensive()
+        count_expenses()
     elif choice == "5":
+        most_expensive()
+    elif choice == "6":
         print("Goodbye!")
         break
     else:
