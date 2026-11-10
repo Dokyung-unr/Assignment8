@@ -47,6 +47,20 @@ def view_total():
 
     print(f"Total expenses: ${total:.2f}")
 
+def most_expensive():
+    if len(expenses) == 0:
+        print("No expenses yet.")
+        return
+
+    highest = expenses[0]
+
+    for expense in expenses:
+        if expense[1] > highest[1]:
+            highest = expense
+    print(f"Most expensive: {highest[0]} ${highest[1]:.2f}")
+
+
+# Keep showing the menu until the user chooses Exit.
 
 # Keep showing the menu until the user chooses Exit.
 while True:
@@ -55,7 +69,8 @@ while True:
     print("2. View expenses")
     print("3. View total expenses")
     print("4. Count expenses")
-    print("5. Exit")
+    print("5. Most expensive expense")
+    print("6. Exit")
 
     choice = input("Choose an option: ")
 
@@ -68,6 +83,8 @@ while True:
     elif choice == "4":
         count_expenses()
     elif choice == "5":
+        most_expensive()
+    elif choice == "6":
         print("Goodbye!")
         break
     else:
